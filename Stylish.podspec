@@ -24,7 +24,9 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
+  s.description  = <<-DESC Stylish is a library that lets you create stylesheets in code or in JSON 
+                            for controlling virtually any property of your UIViews, UILabels, UIButtons, etc.
+                            as well as the properties of any custom views you create yourself.
                    DESC
 
   s.homepage     = "https://github.com/andrey-krivobok/Stylish"
@@ -38,8 +40,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
