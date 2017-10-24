@@ -93,6 +93,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "Stylish", "Stylish/**/*.swift"
+  s.ios.source_files  = "Stylish", "Stylish/**/*.swift"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
