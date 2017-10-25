@@ -15,12 +15,7 @@ public struct Stylish {
     
     /// The app bundle that Stylish uses to prefix style classes when dynamically instantiating them, to load stylesheet json from, etc. By default, Stylish will look for the first bundle it finds that has a png resource that with the string "AppIcon" in its name (a good guess for what the main bundle will ultimately be for the app).  If this guess is wrong, you can set this global static var directly from your app delegate for runtime resolution, and from an extension on UIView that overrides prepareForInterfaceBuilder for design-time resolution (and to see live storyboard previews work).
     public static var appBundle: Bundle {
-        let bundle = Bundle.allBundles.first(where: {
-            guard let resourceURL = $0.resourceURL else { return false }
-            let urls = try? FileManager.default.contentsOfDirectory(at: resourceURL, includingPropertiesForKeys:[], options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
-            return urls?.contains{ $0.absoluteString.hasSuffix(".png") == true && $0.absoluteString.range(of:"AppIcon") != nil } == true
-        }) ?? Bundle.main
-        return bundle
+        return Bundle(for: type(of: UIApplication.shared.delegate))
     }
     
     
